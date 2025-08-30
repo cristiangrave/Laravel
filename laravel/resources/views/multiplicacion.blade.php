@@ -10,6 +10,7 @@
         <button type="submit">Multiplicar</button>
     </form>
     @if(isset($resultado))
+    <!-- hola  -->
         <h2>El resultado es: {{ $resultado }}</h2>
     @endif
 @endsection
