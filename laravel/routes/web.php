@@ -2,6 +2,8 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\calculadoraController;
+use App\Http\Controllers\ProductoController;
+use App\Http\Controllers\login;
 use Illuminate\Support\Facades\Log;
 /* asi se llama un controllador  */
  Route::get('/', function () {
@@ -11,20 +13,18 @@ use Illuminate\Support\Facades\Log;
 Route::get('/suma', function () {
     return view('suma');
 });
-Route::get('/sum', [calculadoraController::class, 'sumar']);
 
+Route::get('/login', [login::class, 'index']);
+Route::get('/sum', [calculadoraController::class, 'sumar']);
 Route::get('/resta', function () {
     return view('resta');
 });
 Route::get('/restar', [calculadoraController::class, 'restar']);
-
-
 Route::get('/multiplicacion', function () {
     Log::info('Mensaje enviado desde la ruta /multiplicacion');
     return view('multiplicacion');
 });
 Route::get('/multiplicar', [calculadoraController::class, 'multiplicar']);
-
 Route::get('/division', function () {
     Log::info('Mensaje enviado desde la ruta /division');
     return view('division');
@@ -43,5 +43,6 @@ Route::get('/dividir', [calculadoraController::class, 'dividir']);
 
  Route::get('/sum', [calculadoraController::class, 'sumar']);
  /* aqui se llama al controllador y luego se llama a la suma */
+ Route::get('/productos', [ProductoController::class, 'index']);
 
-  
+
